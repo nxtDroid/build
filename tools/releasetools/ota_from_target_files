@@ -551,6 +551,15 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 """ % bcb_dev)
 
   script.AppendExtra("ifelse(is_mounted(\"/system\"), unmount(\"/system\"));")
+  script.Print("Flashing Outqast ROM by mmcneil)...")
+  script.Print("***************************************************************");
+  script.Print("*    ________            __                             __    *");
+  script.Print("*    \_____  \   __ __ _/  |_   ___________     _______/  |_  *");
+  script.Print("*     /   |   \ |  |  \\   __\ / ____/\__  \   /  ___/\   __\ *");
+  script.Print("*    /    |    \|  |  / |  |  < <_|  | / __ \_ \___ \  |  |   *");
+  script.Print("*    \_______  /|____/  |__|   \__   |(____  //____  > |__|   *");
+  script.Print("*            \/                   |__|     \/      \/         *");
+  script.Print("***************************************************************");
   device_specific.FullOTA_InstallBegin()
 
   if OPTIONS.backuptool:
@@ -565,14 +574,6 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
   if HasVendorPartition(input_zip):
     system_progress -= 0.1
 
-script.Print("**************************************************************************************************");
-script.Print("*    ________            __                             __    __________ ________      _____     *");
-script.Print("*    \_____  \   __ __ _/  |_   ___________     _______/  |_  \______   \\_____  \    /     \    *");
-script.Print("*     /   |   \ |  |  \\   __\ / ____/\__  \   /  ___/\   __\  |       _/ /   |   \  /  \ /  \   *");
-script.Print("*    /    |    \|  |  / |  |  < <_|  | / __ \_ \___ \  |  |    |    |   \/    |    \/    Y    \  *");
-script.Print("*    \_______  /|____/  |__|   \__   |(____  //____  > |__|    |____|_  /\_______  /\____|__  /  *");
-script.Print("*            \/                   |__|     \/      \/                 \/         \/         \/   *");
-script.Print("**************************************************************************************************");
   if "selinux_fc" in OPTIONS.info_dict:
     WritePolicyConfig(OPTIONS.info_dict["selinux_fc"], output_zip)
 
